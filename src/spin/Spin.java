@@ -10,7 +10,7 @@ package spin;
  * @author borjigin
  */
 public class Spin {
-    public static final String warh = "https://www.benl.ebay.be/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=warhammer+&_sacat=0";
+    public static final String warh = "https://www.benl.ebay.be/sch/i.html?_odkw=warhammer+-bit&_osacat=0&_ipg=200&_from=R40&_trksid=m570.l1313&_nkw=warhammer&_sacat=0";
     /**
      * @param args the command line arguments
      */
