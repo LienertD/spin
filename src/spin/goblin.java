@@ -37,7 +37,7 @@ public class goblin {
     
     public String raid(String url){
         System.out.println("Received web page at " + url); // We were not successful in our HTTP request
-        Elements linksOnPage = htmlDocument.select("a[href]");
+        Elements linksOnPage = htmlDocument.getElementsByTag("href");
         System.out.println("Found (" + linksOnPage.size() + ") links");
         for(Element link : linksOnPage)
         {
@@ -56,14 +56,19 @@ public class goblin {
         }
     }
     
-    public void request(String url){
-        Thread.sleep(r.);
+    public String request(String url){
         try {
-            Connection connection = Jsoup.connect(url).userAgent(USER_AGENT);
-            Document htmlDocument = connection.get();
-            this.htmlDocument = htmlDocument;
-        } catch (IOException ex) {
+            Thread.sleep(r.nextInt(3000)+1500);
+            try {
+                Connection connection = Jsoup.connect(url).userAgent(USER_AGENT);
+                Document htmlDocument = connection.get();
+                this.htmlDocument = htmlDocument;
+            } catch (IOException ex) {
+                Logger.getLogger(goblin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (InterruptedException ex) {
             Logger.getLogger(goblin.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return htmlDocument.toString();
     }
 }

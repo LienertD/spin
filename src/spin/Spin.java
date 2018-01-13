@@ -10,13 +10,13 @@ package spin;
  * @author borjigin
  */
 public class Spin {
-
+    public static final String warh = "https://www.benl.ebay.be/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=warhammer+&_sacat=0";
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         goblin gobbo = new goblin();
-        String inhoud = gobbo.raid("https://www.benl.ebay.be/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=warhammer+&_sacat=0");
+        String inhoud = gobbo.request(warh);
         gobbo.scribble("ebaywarhammer.html", inhoud);
         
     }
