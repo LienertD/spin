@@ -1,24 +1,25 @@
 package spin.model;
 
+import java.util.Date;
+
 public class EbayPrice {
 
-    private Double price;
+	private Double price;
+	private Date date;
 
-    public void setName(Double name) {
-        this.price = name;
-    }
+	public void setName(Double name) {
+		this.price = name;
+	}
 
-    public Double getName() {
-        return price;
-    }   
-    
-    private DateTime price;
+	public Double getName() {
+		return price;
+	}
 
-    public void setName(DateTime name) {
-        this.price = name;
-    }
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-    public Double getName() {
-        return price;
-    }
+	public Double getDate() {
+		return price;
+	}
 }
