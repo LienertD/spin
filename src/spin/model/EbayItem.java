@@ -14,5 +14,5 @@ public class EbayItem {
 
     public String getName() {
         return title;
-    }    
+    } 
 }
