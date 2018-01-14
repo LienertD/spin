@@ -8,11 +8,11 @@ public class EbayItem {
 
 	private String title;
     
-	public void setName(String name) {
-        this.title = name;
+	public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getName() {
+    public String getTitle() {
         return title;
     }    
 }
