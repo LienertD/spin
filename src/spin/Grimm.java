@@ -5,11 +5,29 @@
  */
 package spin;
 
+import java.util.ArrayList;
+import java.util.List;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import spin.model.EbayItem;
+
 /**
  *
  * @author borjigin
  */
 public class Grimm {
+    List<EbayItem> list;
     
-    public 
+    //creeert basisitems voor eliminatie,items bevatten dus enkel naam
+    public List<EbayItem> createBasicItems(Document html){
+        list = new ArrayList<>();
+        Elements links = html.getElementsByClass("lvpicinner full-width picW");
+        for (Element link : links) {
+          String linkHref = link.attr("href");
+          System.out.println(link.text());
+            
+       }
+        return null;
+    }
 }
