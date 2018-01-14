@@ -28,23 +28,14 @@ import org.jsoup.select.Elements;
  */
 public class goblin {
     public final String USER_AGENT = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36";
-    private Document htmlDocument;
+  
     private Random r ;
     
     public goblin(){
         r=new Random();
     }
     
-    public String raid(String url){
-        System.out.println("Received web page at " + url); // We were not successful in our HTTP request
-        Elements linksOnPage = htmlDocument.getElementsByTag("href");
-        System.out.println("Found (" + linksOnPage.size() + ") links");
-        for(Element link : linksOnPage)
-        {
-            System.out.println(link.attr("href"));
-        }
-        return htmlDocument.toString();
-    }
+
     
     public void scribble(String filename,String content){
         File f = new File(filename);
@@ -56,19 +47,21 @@ public class goblin {
         }
     }
     
-    public String request(String url){
+    public Document request(String url){
+        Document htmlDocument=null;
         try {
+            
             Thread.sleep(r.nextInt(3000)+1500);
             try {
                 Connection connection = Jsoup.connect(url).userAgent(USER_AGENT);
-                Document htmlDocument = connection.get();
-                this.htmlDocument = htmlDocument;
+                htmlDocument = connection.get();
+                
             } catch (IOException ex) {
                 Logger.getLogger(goblin.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (InterruptedException ex) {
             Logger.getLogger(goblin.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return htmlDocument.toString();
+        return htmlDocument;
     }
 }

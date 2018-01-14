@@ -5,6 +5,8 @@
  */
 package spin;
 
+import org.jsoup.nodes.Document;
+
 /**
  *
  * @author borjigin
@@ -16,8 +18,13 @@ public class Spin {
      */
     public static void main(String[] args) {
         goblin gobbo = new goblin();
-        String inhoud = gobbo.request(warh);
-        gobbo.scribble("ebaywarhammer.html", inhoud);
+        Grimm brother = new Grimm();
+        Document d = gobbo.request(warh);
+        brother.createBasicItems(d);
+        /*
+        gobbo.scribble("ebaywarhammer.html", d.text());
+        brother.createBasicItems(d);
+        */      
         
     }
     
