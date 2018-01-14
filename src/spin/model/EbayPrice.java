@@ -7,11 +7,11 @@ public class EbayPrice {
 	private Double price;
 	private Date date;
 
-	public void setName(Double name) {
+	public void setPrice(Double name) {
 		this.price = name;
 	}
 
-	public Double getName() {
+	public Double getPrice() {
 		return price;
 	}
 
